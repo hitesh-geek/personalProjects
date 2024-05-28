@@ -4,36 +4,29 @@
 
 int main()
 {
-    float num1, num2;
+    int num1, num2;
     char options;
     printf("\t\t***CALCULATOR***\n");
-    printf("Enter a number: ");
-    scanf("%f",&num1);
-    printf("(+) ADD\t\t(-) SUBTRACT\t\t(*) MULTIPLY\t\t(/) DIVISION\n");
-    scanf("\n%c", &options);
+    printf(">");
+    scanf("%d%c%d",&num1, &options, &num2);
     switch (options) {
     case '+' :
-        printf("Enter a number: ");
-        scanf("%f",&num2);
-        printf("Value is : %0.2f\n", num1 + num2);
+        printf("=%0.2f\n",(float)num1 + num2);
         break;
     case '-':
-        printf("Enter a number: ");
-        scanf("%f",&num2);
-        printf("Value is : %0.2f\n", num1 - num2);
+        printf("=%0.2f\n", (float)num1 - num2);
         break;
     case '*':
-        printf("Enter a number: ");
-        scanf("%f",&num2);
-        printf("Value is : %0.2f\n", num1 * num2);
+        printf("=%0.2f\n", (float)num1 * num2);
         break;
     case '/':
-        printf("Enter a number: ");
-        scanf("%f",&num2);
-        printf("Value is : %0.2f\n", num1 / num2);
+        printf("=%0.2f\n", (float)num1 / num2);
+        break;
+    case '%':
+        printf("=%d\n",num1 % num2);
         break;
     default:
-        printf("Invalid options\n");
+        printf("Invalid Operator\n");
 
     }
     return 0;
