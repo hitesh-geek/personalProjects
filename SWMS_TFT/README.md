@@ -1,26 +1,22 @@
-# Smart Weather Monitor - STM32 + FreeRTOS
+# Smart Weather Monitor System (SWMS) with TFT & ESP8266
 
-A Weather monitoring system using STM32 and FreeRTOS that reads data from sensors and displays it on a TFT screen.
+This is a weather monitoring project developed using **STM32CubeIDE**. It reads sensor data using an STM32 microcontroller, displays it on a TFT screen, and sends it over WiFi using the **ESP8266** module.
 
-## 🔧 Project Overview
-- MCU: STM32F401RE
-- Sensors: DHT11 (Humidity/Temp)
-- Display: ST7735 1.8" TFT
-- RTOS: FreeRTOS
-- IDE: STM32CubeIDE
+I built this project to practice interfacing multiple peripherals and using serial communication with an external WiFi module.
 
-## 🧱 Architecture
-- **Task 1** – Sensor polling
-- **Task 2** – Display update
-- **Task 3** – UART data logging
+## 🛠 Tools and Components
+- **Microcontroller**: STM32F103C8T6 (Blue Pill)
+- **Sensors**:
+  - DHT11 (Temperature and Humidity)
+- **Display**: ILI9341 TFT via SPI
+- **WiFi Module**: ESP8266 (AT Command Mode)
+- **IDE**: STM32CubeIDE v1.16.0
+- **Communication**:
+  - UART (for ESP8266)
+  - SPI (for TFT)
 
-## 📦 Dependencies
-- FreeRTOS (CMSIS wrapper)
-- STM32 HAL
-- TFT SPI library
-
-## 🚀 Getting Started
-1. Import the project in STM32CubeIDE.
-2. Generate code with `.ioc` if needed.
-3. Build and flash to your STM32 board.
+## 🔧 What It Does
+- Reads temperature, humidity, and pressure data.
+- Displays real-time data on the TFT screen.
+- Sends the data to a server using ESP8266 via AT commands.
 
