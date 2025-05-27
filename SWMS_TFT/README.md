@@ -1,4 +1,4 @@
-# Smart Weather Monitor System (SWMS) with TFT & ESP8266
+# Smart Weather Monitor System (SWMS) with TFT & DHT11
 
 This is a weather monitoring project developed using **STM32CubeIDE**. It reads sensor data using an STM32 microcontroller, displays it on a TFT screen, and sends it over WiFi using the **ESP8266** module.
 
