@@ -603,12 +603,12 @@ void Check_InternetStatus(void const * argument)
 	  else if(wifi_status==STATUS_ERROR)
 	  {
 		//Writing TO EEPROM
-		sprintf(EEPROM_WR_BUFF, "%d%d%d%d", Time_Date[2]-6*(Time_Date[2]>>4),Time_Date[1]-6*(Time_Date[1]>>4),Time_Date[0]-6*(Time_Date[0]>>4),(int)dht_buffer[2]);
+		sprintf(EEPROM_WR_BUFF, "%d%d%d%d%d", Time_Date[2]-6*(Time_Date[2]>>4),Time_Date[1]-6*(Time_Date[1]>>4),Time_Date[0]-6*(Time_Date[0]>>4),(int)dht_buffer[0],(int)dht_buffer[2]);
 		HAL_I2C_Mem_Write(&hi2c1,(0x50<<1),0,1,(uint8_t *)EEPROM_WR_BUFF,15,1000);
 
 		//Reading From EEPROM (For debugging purpose)
-//		osDelay(500);
-//		HAL_I2C_Mem_Read(&hi2c1,(0x50<<1),0,1,(uint8_t *)EEPROM_RD_BUFF,15,2000);
+		HAL_Delay(100);
+		HAL_I2C_Mem_Read(&hi2c1,(0x50<<1),0,1,(uint8_t *)EEPROM_RD_BUFF,15,2000);
 	  }
   }
   /* USER CODE END Check_InternetStatus */
